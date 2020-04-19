@@ -7,3 +7,4 @@ def test_call_price():
     vol = 0.2
     value = black_scholes(F, K, T, "Call", vol)
     assert(value > F - K)
+    assert(2 < 1)
