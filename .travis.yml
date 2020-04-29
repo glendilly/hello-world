@@ -1,3 +1,6 @@
+dist: xenial
+os: linux
+
 env:
   global:
     - CC_TEST_REPORTER_ID=3f710de5d623c0b97e7c9020214d0b90b326dd3a95cb3dfbbc59c41b329d56a9
@@ -6,11 +9,6 @@ python:
   - "3.8"
 install:
   - pip install -r requirements.txt
-  - pip install coverage
-script:
-  - flake8 . --count --show-source --statistics
-  - pytest
-  - python -m pytest --cov=src
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
