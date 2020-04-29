@@ -1,9 +1,18 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=3f710de5d623c0b97e7c9020214d0b90b326dd3a95cb3dfbbc59c41b329d56a9
 language: python
 python:
   - "3.8"
 install:
   - pip install -r requirements.txt
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - flake8 . --count --show-source --statistics
   - pytest
   - python -m pytest --cov=src
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
