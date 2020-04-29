@@ -11,9 +11,8 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  #- flake8 . --count --show-source --statistics
-  #- pytest
-  #- python -m pytest --cov=src
-  - coverage report
+  - flake8 . --count --show-source --statistics
+  - pytest
+  - python -m pytest --cov=src
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
