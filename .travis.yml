@@ -14,4 +14,4 @@ before_script:
 script:
   - python -m coverage xml src/test_black_scholes.py
 after_script:
-  - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build
