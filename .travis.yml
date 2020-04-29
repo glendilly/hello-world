@@ -6,11 +6,6 @@ python:
   - "3.8"
 install:
   - pip install -r requirements.txt
-  - pip install coverage
-script:
-  - flake8 . --count --show-source --statistics
-  - pytest
-  - python -m pytest --cov=src
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
