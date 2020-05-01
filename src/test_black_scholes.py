@@ -1,16 +1,23 @@
-from derivatives_maths import black_scholes
+"""
+Test file for Black pricer
+"""
+
 from pytest import raises
+from derivatives_maths import black_scholes
+
 
 def test_call_price():
-    F = 1.1
-    K = 1.0
-    T = 1.0
-    vol = 0.2
-    value = black_scholes(F, K, T, vol)
-    assert(value > F - K)
+    """
+    Test that call price is greater than intrinsic value
+    """
+    value = black_scholes(1.1, 1.0, 1.0, 0.2)
+    assert value > 1.1 - 1.0
 
 
 def test_errors():
+    """
+    Test error handling
+    """
     with raises(Exception):
         black_scholes(-1.1, 1.0, 1.0, 0.2)
     with raises(Exception):
