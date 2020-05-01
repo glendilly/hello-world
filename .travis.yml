@@ -8,13 +8,13 @@ language: python
 python:
   - "3.8"
 install:
-  - pip install -r requirements.txt
+  - pip3 install -r requirements.txt
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - python -m coverage run --source=src -m pytest
-  - python -m coverage xml
+  - python3 -m coverage run --source=src -m pytest
+  - python3 -m coverage xml
 after_script:
   - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
