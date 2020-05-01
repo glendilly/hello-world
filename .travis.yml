@@ -15,6 +15,6 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - python3 -m coverage run --source=src -m pytest
-  - python -m coverage xml
+  - python3 -m coverage xml
 after_script:
   - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
