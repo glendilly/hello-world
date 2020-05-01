@@ -1,5 +1,5 @@
 """
-Test file for Black pricer
+Test file for Black-Scholes pricer
 """
 
 from pytest import raises
